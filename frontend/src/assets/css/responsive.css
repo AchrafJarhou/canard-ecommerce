@@ -1,0 +1,110 @@
+
+/* ============================================================
+   3. RESPONSIVE SPACING (Tablette & Desktop)
+   ============================================================ */
+
+/* Tablette (min 768px) */
+@media (min-width: 768px) {
+    :root {
+        --spacing-md: 2rem;   /* On augmente l'espace moyen */
+        --spacing-lg: 3rem;   /* On augmente le grand espace */
+        --border-radius: 6px; /* Bordures un peu plus arrondies */
+    }
+}
+
+/* Desktop (min 1024px) */
+@media (min-width: 1024px) {
+    :root {
+        --spacing-sm: 1.25rem;
+        --spacing-md: 2.5rem;
+        --spacing-lg: 4rem;
+        --border-radius: 8px;
+    }
+}
+
+/* ============================================================
+   4. EXEMPLE D'APPLICATION
+   ============================================================ */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-body);
+    margin: 0;
+    padding: var(--spacing-md); /* Utilise la variable responsive */
+}
+
+.card {
+    background-color: var(--bg-card);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+h1, h2, h3 {
+    color: var(--text-title);
+    margin-bottom: var(--spacing-sm);
+}
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.button:hover {
+    background-color: var(--accent-hover);
+}
+.button:disabled {
+    background-color: var(--border-color);
+    cursor: not-allowed;
+}
+.input {
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: var(--spacing-md);
+}
+.input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+}
+.footer {
+    text-align: center;
+    padding: var(--spacing-md);
+    font-size: 0.875rem;
+    color: var(--text-body);
+}
+.navbar {
+    background-color: var(--bg-card);
+    padding: var(--spacing-sm) var(--spacing-md);
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: var(--text-body);
+    margin-left: var(--spacing-sm);
+}
+.navbar a:hover {
+    color: var(--primary-color);
+}
+.sidebar {
+    background-color: var(--bg-card);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow);
+    width: 250px;
+}

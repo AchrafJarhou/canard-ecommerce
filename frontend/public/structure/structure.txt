@@ -1,0 +1,18 @@
+src/
+  components/
+    header/
+      Header.jsx
+      Header.module.scss
+      Logo.jsx
+      Logo.module.scss
+      Navbar.jsx
+      Navbar.module.scss
+      IconButton.jsx
+      IconButton.module.scss
+      Button.jsx
+      Button.module.scss
+  pages/
+    Home.jsx
+    Home.module.scss
+  styles/
+    globals.scss

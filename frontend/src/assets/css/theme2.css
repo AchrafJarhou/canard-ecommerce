@@ -1,0 +1,113 @@
+/* ============================================================ */
+/* 1) VARIABLES PAR DÉFAUT & LIGHT MODE                          */
+/* ============================================================ */
+
+:root, /* On cible la racine du document */ 
+[data-theme="light"] { /* On supporte aussi un thème light explicite */
+
+  /* Couleurs de marque (Coin Coin Shop) */
+  --primary-color: #38b6ff; /* Bleu ciel */
+  --secondary-color: #2ecc71; /* Vert succès */
+  --brand-yellow: #ffd105; /* Jaune Canard */
+  --accent-color: #bf3b0f; /* Orange (Bec) */
+  --accent-hover: #ff5733; /* Orange plus clair */
+
+  /* Surfaces et Fonds */
+  --bg-main: #f5f5f5; /* Fond de page */
+  --bg-card: #ffffff; /* Fond des éléments */
+  --border-color: #e0e0e0; /* Bordures discrètes */
+
+  /* Typographie */
+  --text-title: #050505; /* Titres foncés */
+  --text-body: #6b6b6b; /* Texte courant */
+
+  /* Divers */
+  --border-radius: 4px; /* Rayon par défaut */
+  --shadow: 0 2px 10px rgba(0,0,0,0.1); /* Ombre douce */
+
+  /* --- ESPACEMENT (Mobile First - Défaut) --- */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 1rem; /* 16px */
+  --spacing-md: 1.5rem; /* 24px */
+  --spacing-lg: 2rem; /* 32px */
+}
+
+/* ============================================================ */
+/* 2) MODE DARK                                                  */
+/* ============================================================ */
+
+@media (prefers-color-scheme: dark) { /* Dark auto selon le système */
+  :root { /* On surcharge les variables */
+    --primary-color: #4dbfff; /* Bleu plus doux en dark */
+    --brand-yellow: #ffdb33; /* Jaune plus lisible en dark */
+    --bg-main: #121212; /* Fond dark */
+    --bg-card: #1e1e1e; /* Surface dark */
+    --border-color: #333333; /* Bordure dark */
+    --text-title: #f5f5f5; /* Titre clair */
+    --text-body: #b0b0b0; /* Corps clair */
+    --shadow: 0 4px 15px rgba(0,0,0,0.5); /* Ombre renforcée */
+  }
+}
+
+[data-theme="dark"] { /* Dark explicite si tu le forces via attribut */
+  --primary-color: #4dbfff; /* Idem */
+  --brand-yellow: #ffdb33; /* Idem */
+  --bg-main: #121212; /* Idem */
+  --bg-card: #1e1e1e; /* Idem */
+  --border-color: #333333; /* Idem */
+  --text-title: #f5f5f5; /* Idem */
+  --text-body: #b0b0b0; /* Idem */
+  --shadow: 0 4px 15px rgba(0,0,0,0.5); /* Idem */
+}
+
+/* ============================================================ */
+/* 3) RESPONSIVE SPACING (Tablette & Desktop)                    */
+/* ============================================================ */
+
+@media (min-width: 768px) { /* Tablette */
+  :root { /* On ajuste l’espace */
+    --spacing-md: 2rem; /* Espace moyen augmenté */
+    --spacing-lg: 3rem; /* Grand espace augmenté */
+    --border-radius: 6px; /* Coins un peu plus arrondis */
+  }
+}
+
+@media (min-width: 1024px) { /* Desktop */
+  :root { /* On ajuste encore */
+    --spacing-sm: 1.25rem; /* Un peu plus large */
+    --spacing-md: 2.5rem; /* Un peu plus large */
+    --spacing-lg: 4rem; /* Un peu plus large */
+    --border-radius: 8px; /* Coins plus arrondis */
+  }
+}
+
+/* ============================================================ */
+/* 4) BASE GLOBAL                                                */
+/* ============================================================ */
+
+* { /* Reset simple */
+  box-sizing: border-box; /* Tailles plus prévisibles */
+}
+
+html, body { /* Racine */
+  margin: 0; /* Pas de marge */
+  padding: 0; /* Pas de padding */
+}
+
+body { /* Corps */
+  background-color: var(--bg-main); /* Fond via variable */
+  color: var(--text-body); /* Couleur texte via variable */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; /* Police safe */
+}
+
+a { /* Liens */
+  color: inherit; /* Hérite la couleur */
+  text-decoration: none; /* Pas de soulignement par défaut */
+}
+
+.container { /* Wrapper simple réutilisable */
+  width: 100%; /* Pleine largeur */
+  max-width: 1200px; /* Largeur max */
+  margin: 0 auto; /* Centré */
+  padding: 0 var(--spacing-md); /* Respire horizontalement */
+}
